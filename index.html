@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["¡Hola!", "¡Holaaaaaa!", "mas cosas", "las", "que"],
+                nombre: "Mi nombre es Sofía Rizzoli",
+                motivo: "Tomé y sigo en este curso porque esta muy entretenido aprender a hacer páginas web <span>mi reacción a la primera nota...</span>.",
+                etc: "Ya revisé mi primera nota y la verdad es que me fue super bien, pero no entendi porque no tenia el punto base de la clase 02 si hice el ejercicio correctamente.",
+            };
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length); // dame la extension o el largo de ese arreglo
+            
+            console.log(aleatorio);
+            $("h1").html(texto.saludo[aleatorio]);
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            function cualquiera() {
+                $("#alla").toggleClass("escondido");
+            }
+            $("span").click(cualquiera); //cambiar click por hover para cuando pase por arriba activar//
+        </script>
+    </body>
+</html>
